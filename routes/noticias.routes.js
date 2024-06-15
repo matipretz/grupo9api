@@ -11,6 +11,7 @@ export default class NoticiasRoutes extends Routes {
   getRoutes () {
     this.router
       .get('/', this.controller.getAll)
+      .get('/categoria', this.controller.getByCategory)
       .get('/:id', this.controller.getById)
       .post('/', this.controller.add)
       .put('/', this.controller.modify)

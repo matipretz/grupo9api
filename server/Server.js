@@ -1,6 +1,6 @@
 import express from 'express'
-import NoticiasRoutes from '../routes/noticias.routes.js'
 import cors from 'cors'
+import NoticiasRoutes from '../routes/noticias.routes.js'
 
 export default class Server {
   static app = express()
@@ -9,6 +9,7 @@ export default class Server {
     Server.app.use(express.json())
     Server.app.use(express.urlencoded({ extended: true }))
     Server.app.use(cors())
+    Server.app.disable('x-powered-by')
   }
 
   static routes () {
@@ -18,7 +19,7 @@ export default class Server {
 
   static runServer (port) {
     Server.app.listen(port, () =>
-      console.log(`listen at http://localhost:${port}`)
+      console.log(`server listening on port http://localhost:${port}`)
     )
   }
 

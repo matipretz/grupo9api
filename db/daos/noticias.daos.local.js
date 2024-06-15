@@ -1,8 +1,10 @@
 import mock from '../mocks/noticias.mock.js'
+import NoticiasHelpers from '../../helpers/noticias.helper.js'
 
 export default class NoticiasDaoMemory {
   constructor () {
     this.noticias = mock
+    this.helpers = new NoticiasHelpers()
   }
 
   getAll () {
@@ -14,9 +16,17 @@ export default class NoticiasDaoMemory {
     return noticia
   }
 
-  add (noticia) {
-    this.noticias.push(noticia)
-    return true
+  getByCategory (categoria) {
+    const result = this.noticias.filter(
+      noticias => noticias.categoria === categoria
+    )
+    return result
+  }
+
+  add = async (req, res) => {
+    const noticia = this.helpers.createNoticia(req.body)
+    const result = await this.db.add(noticia)
+    res.json(result)
   }
 
   modify (data) {

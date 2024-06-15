@@ -20,6 +20,12 @@ export default class NoticiaController {
     res.json(noticia)
   }
 
+  getByCategory = async (req, res) => {
+    const { categoria } = req.query
+    const result = await this.db.getByCategory(categoria)
+    res.json(result)
+  }
+
   add = async (req, res) => {
     const noticia = this.helpers.createNoticia(req.body)
     const result = await this.db.add(noticia)
