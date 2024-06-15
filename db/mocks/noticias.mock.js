@@ -1,6 +1,6 @@
 const mock = [
   {
-    id: '1',
+    id: 1,
     autor: 'Noelia Matamoros',
     categoria: ['Barriales'],
     copete:
@@ -9,7 +9,7 @@ const mock = [
     titulo: 'Bombero héroe rescata a minino atrapado en árbol durante incendio'
   },
   {
-    id: '2',
+    id: 2,
     autor: 'Juan Marcos Kruppa',
     categoria: ['Ciencia'],
     copete:
@@ -19,7 +19,7 @@ const mock = [
       'Descubierto nuevo dinosaurio en Egipto: Un hallazgo que desafía la historia'
   },
   {
-    id: '3',
+    id: 3,
     autor: 'Noelia Matamoros',
     categoria: ['Tecnología'],
     copete:
@@ -28,7 +28,7 @@ const mock = [
     titulo: 'Nuevo avance científico promete revolucionar la energía renovable'
   },
   {
-    id: '4',
+    id: 4,
     autor: 'Juan Marcos Kruppa',
     categoria: ['Comida'],
     copete:
@@ -38,7 +38,7 @@ const mock = [
       'El chef José Andrés convierte sus restaurantes en cocinas comunitarias'
   },
   {
-    id: '5',
+    id: 5,
     autor: 'Lucas Ojunian',
     categoria: ['Tecnología'],
     copete:
@@ -48,7 +48,7 @@ const mock = [
       'La NASA confirma el lanzamiento del rover Perseverance a Marte en julio'
   },
   {
-    id: '6',
+    id: 6,
     autor: 'Lucas Ojunian',
     categoria: ['Internacionales'],
     copete:
@@ -58,7 +58,7 @@ const mock = [
       'España anuncia un paquete de estímulo económico de 200 mil millones de euros'
   },
   {
-    id: '7',
+    id: 7,
     autor: 'Lucas Ojunian',
     categoria: ['Tecnología'],
     copete:
@@ -68,7 +68,7 @@ const mock = [
       'Amazon contratará a 100,000 empleados adicionales en EE.UU. debido a la pandemia'
   },
   {
-    id: '8',
+    id: 8,
     autor: 'Noelia Matamoros',
     categoria: ['Deportes'],
     copete:
@@ -77,7 +77,7 @@ const mock = [
     titulo: 'El COI pospone los Juegos Olímpicos de Tokio 2020 hasta 2021'
   },
   {
-    id: '9',
+    id: 9,
     autor: 'Matias Pretz',
     categoria: ['salud'],
     copete:
@@ -87,7 +87,7 @@ const mock = [
       'La OMS lanza una aplicación móvil para información sobre el coronavirus'
   },
   {
-    id: '10',
+    id: 10,
     autor: 'Matias Pretz',
     categoria: ['Farándula'],
     copete:
@@ -97,7 +97,7 @@ const mock = [
       "Uso un 'teléfono tonto' que solo hace llamadas y envía textos: actor de 'Breaking Bad'"
   },
   {
-    id: '11',
+    id: 11,
     autor: 'Matias Pretz',
     categoria: ['salud'],
     copete:

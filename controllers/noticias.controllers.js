@@ -9,15 +9,15 @@ export default class NoticiaController {
     this.helpers = new NoticiasHelpers()
   }
 
-  getAll = async (req, res) => {
-    const noticias = await this.db.getAll()
+  getAll = (req, res) => {
+    const noticias = this.db.getAll()
     res.json(noticias)
   }
 
-  getById = async (req, res) => {
+  getById = (req, res) => {
     const { id } = req.params
-    const noticias = await this.db.getById(id)
-    res.json(noticias)
+    const noticia = this.db.getById(id)
+    res.json(noticia)
   }
 
   add = async (req, res) => {
