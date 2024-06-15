@@ -1,5 +1,6 @@
 import express from 'express'
 import NoticiasRoutes from '../routes/noticias.routes.js'
+import cors from 'cors'
 
 export default class Server {
   static app = express()
@@ -7,6 +8,7 @@ export default class Server {
   static middlewares () {
     Server.app.use(express.json())
     Server.app.use(express.urlencoded({ extended: true }))
+    Server.app.use(cors())
   }
 
   static routes () {
