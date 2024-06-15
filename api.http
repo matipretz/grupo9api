@@ -2,10 +2,10 @@
 GET http://localhost:8080/noticias
 
 ### Recuperar una noticia por id
-GET http://localhost:8080/noticias/3
+GET http://localhost:8080/noticias/12
 
 ### Recuperar todas las noticias por categoria
 GET http://localhost:8080/noticias/categoria?categoria=salud
 
-
-
+### Borrar noticias por id
+DELETE  http://localhost:8080/noticias/12

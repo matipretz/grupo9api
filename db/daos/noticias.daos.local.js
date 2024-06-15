@@ -23,10 +23,9 @@ export default class NoticiasDaoMemory {
     return result
   }
 
-  add = async (req, res) => {
-    const noticia = this.helpers.createNoticia(req.body)
-    const result = await this.db.add(noticia)
-    res.json(result)
+  add (noticia) {
+    this.noticias.push(noticia)
+    return true
   }
 
   modify (data) {
