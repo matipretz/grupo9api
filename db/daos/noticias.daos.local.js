@@ -11,7 +11,6 @@ export default class NoticiasDaoMemory {
 
   getById (id) {
     const noticia = this.noticias.find(noticia => noticia.id === parseInt(id))
-    console.log(noticia)
     return noticia
   }
 
