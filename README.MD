@@ -2,7 +2,7 @@
     <h1>CaC 4.0 FullStack NodeJS 2024 - Com 24134</h1>
     <img alt="bac logo" src="./readme/logo-CAC.png" height="100px" />
     <img alt="cac logo" src="./readme/bac.png" height="100px" />  
-        <a href="https://grupo9.vercel.app/"><h2>Grupo 9 - TFI</h2></a>
+        <h2>Grupo 9 - TFI</h2>
 </div>
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)

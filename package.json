@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/matipretz/g9back.git"
+    "url": "git+https://github.com/matipretz/grupo9api.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/matipretz/g9back/issues"
+    "url": "https://github.com/matipretz/grupo9api/issues"
   },
-  "homepage": "https://github.com/matipretz/g9back#readme",
+  "homepage": "https://github.com/matipretz/grupo9api#readme",
   "dependencies": {
     "@dotenvx/dotenvx": "0.45.0",
     "cors": "2.8.5",
