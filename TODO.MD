@@ -5,7 +5,7 @@
 - implementar jwt
 
 # BD
-- Desplegar una nueva BD para la nueva API `||` dropear la tabla y volver a cargar las noticias usando la nueva API
+- Desplegar una nueva BD para la nueva API (difieren las tablas)`||` dropear la tabla y volver a cargar las noticias usando la nueva API
 
 # README
 - Public
