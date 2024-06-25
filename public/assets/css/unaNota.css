@@ -1,0 +1,48 @@
+.textonota p {
+    margin: 15px 0;
+}
+
+.autor {
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+h1 {
+    font-size: 2em !important;
+    font-weight: bold !important;
+}
+
+.imgFondo {
+    background: url('../../images/noticia1.webp') no-repeat #cccccc;
+    background-position-y: -200px;
+    background-size: cover;
+
+    height: 600px;
+}
+
+@media screen and (max-width: 768px) {
+    .imgFondo {
+        background: url('../../images/noticia1.mobile.webp') no-repeat #cccccc;
+        background-position-y: -10px;
+        height: 300px;
+    }
+
+}
+
+@media screen and (max-width: 476px) {
+    .imgFondo {
+        background: url('../../images/noticia1.mobile.webp') no-repeat #cccccc;
+        background-position-y: -10px;
+        height: 300px;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    .imgFondo {
+        background: url('../../images/noticia1.mobile.webp') no-repeat #cccccc;
+        background-position-y: -1px;
+        height: 300px;
+    }
+
+}

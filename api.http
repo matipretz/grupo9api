@@ -1,42 +1,37 @@
 ### Recuperar todas las noticias
-GET http://localhost:8080/noticias
+GET http://localhost:8090/noticias
+
 
 ### Recuperar una noticia por id
-GET http://localhost:8080/noticias/3
+GET http://localhost:8090/noticias/20
 
-### Recuperar todas las noticias por categoria
-GET http://localhost:8080/noticias/categoria?categoria=salud
-
-### Crear una película con POST
-POST http://localhost:8080/noticias
+### Postear una noticia
+POST http://localhost:8090/noticias
 Content-Type: application/json
 
 {
-  "id": 12,
+  "categoria": "1",
+  "titulo": "title",
+  "cuerpo": "<p>Cuerpo</p>",
   "autor": "Matias",
-  "categoria": "TEST",
-  "copete": "TEST",
-  "imagenUrl": "TEST",
-  "titulo": "TEST"
+  "fecha": "2024-06-23",
+  "imagen": "https://grupo9.vercel.app/images/noticia1.mobile.webp"
+
 }
 
-### Recuperar una noticia por id
-GET http://localhost:8080/noticias/12
-
-### Crear una película con POST
-PUT http://localhost:8080/noticias/12
+### Actualizar una noticia
+PATCH http://localhost:8090/noticias/20
 Content-Type: application/json
 
 {
-  "autor": "Matias",
-  "categoria": "TEST2",
-  "copete": "TEST2",
-  "imagenUrl": "TEST2",
-  "titulo": "TEST2"
+  "categoria": "2",
+  "titulo": "title2",
+  "cuerpo": "<p>Cuerpo2</p>",
+  "autor": "Matias2",
+  "fecha": "2024-06-24",
+  "imagen": "https://grupo9.vercel.app/images/noticia2.mobile.webp"
 }
 
-### Recuperar una noticia por id
-GET http://localhost:8080/noticias/12
+### Borrar una noticia por id
+DELETE  http://localhost:8090/noticias/11
 
-### Borrar noticias por id
-DELETE  http://localhost:8080/noticias/12

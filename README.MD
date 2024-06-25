@@ -43,26 +43,19 @@
 
 #### De produccion:
 
-- [express](https://favicon.io/): Fast, unopinionated, minimalist web framework for Node.js.
-- [dotenv](https://favicon.io/): Loads environment variables from .env file.
-- [cors](https://favicon.io/): Node.js CORS middleware
+- [express](https://www.npmjs.com/package/express): Fast, unopinionated, minimalist web framework for Node.js.
+- [dotenvx](https://github.com/dotenvx/dotenvx): a better dotenv–from the creator of dotenv.
+- [cors](https://www.npmjs.com/package/cors): Node.js CORS middleware.
+- [mysql2](https://www.npmjs.com/package/mysql2): MySQL client for Node.js with focus on performance.
 
 #### De desarrollo:
 
-- [nodemon](https://favicon.io/): Simple monitor script for use during development of a Node.js app.
-- [standard](https://favicon.io/): JavaScript Standard Style.
-
-### Contribuyentes:
-
-<a href="https://github.com/matipretz/grupo9api/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=matipretz/grupo9api" />
-</a>
+- [standard](https://www.npmjs.com/package/standard): JavaScript Standard Style.
 
 ### Links:
 
 - [✉️ Contacto](mailto:mati.pretz+dev@googlemail.com?subject=[G9N])
-- [🗄️ Repositorio](https://github.com/matipretz/grupo9api)
-- [🌐 Sitio](https://grupo9.vercel.app/)
+- [🌐 Cliente](https://grupo9.vercel.app/)
 
 ### 1. Empezar 🚀
 
@@ -74,7 +67,7 @@ npm install
 
 ### 2. Añade tu contenido:
 
-Edita el archivo `.env_template` y renombralo a `.env` para utilizar tus variables de entorno. Este se encuentra incluido en el archivo `.gitignore` para evitar transmitir datos sensibles.
+Edita el archivo `.env_template` y renombralo a `.env.dev` para utilizar tus variables de entorno o a `.env.prod` para utilizar las credenciales de producción. Estos se encuentran incluidos en el archivo `.gitignore` para evitar transmitir datos sensibles.
 
 ### 3. Lanza el servidor de desarrollo:
 
@@ -82,7 +75,7 @@ Edita el archivo `.env_template` y renombralo a `.env` para utilizar tus variabl
 npm run dev
 ```
 
-1. Abre [**http://localhost:8080/noticias**](http://localhost:8080/noticias) en tu navegador para ver el resultado
+1. Abre [**http://localhost:8090/noticias**](http://localhost:8090/noticias) en tu navegador para ver el resultado
 
 ### 4. Endpoints:
 
@@ -107,9 +100,9 @@ Por otro lado Error Lens es una extension de lo mas recomendada, no solo para tr
 
 ### 6. Comandos:
 
-|     | Comando       | Acción                                                                                                                                                            |
-| :-- | :------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ⚙️  | `npm run dev` | Lanza un servidor de desarrollo local en `localhost:8080`.                                                                                                        |
-| ⚙️  | `npm run fix` | Comprueba posibles errores de formato y formatea utilizando [JavaScript Standard Style](https://standardjs.com/) (no es necesario si se utiliza Prettier-Standad). |
-
+|     | Comando        | Acción                                                                                                                                                                                                                         |
+| :-- | :------------  | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ⚙️   | `npm start`    | Lanza el servidor en modo producción conectando el mismo a la base de datos principal.                                                                                                                                         |
+| ⚙️   | `npm run dev`  | Lanza un servidor de desarrollo local en `localhost:8090` e intenta conectar a la base de datos local con el flag watch para observar cambios en el codigo del servidor y evitar tener que relanzarlo con cada nuevo guardado. |
+  
 ## [🔝](#top)

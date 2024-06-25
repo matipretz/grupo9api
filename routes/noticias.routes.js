@@ -1,20 +1,13 @@
-import Routes from './routes.js'
-import NoticiaController from '../controllers/noticias.controllers.js'
+import { Router } from 'express'
+import { controllers } from '../controllers/noticia.controller.js'
 
-export default class NoticiasRoutes extends Routes {
-  constructor () {
-    super()
-    this.controller = new NoticiaController()
-    this.getRoutes()
-  }
+const router = Router()
 
-  getRoutes () {
-    this.router
-      .get('/', this.controller.getAll)
-      .get('/categoria', this.controller.getByCategory)
-      .get('/:id', this.controller.getById)
-      .post('/', this.controller.add)
-      .put('/', this.controller.modify)
-      .delete('/:id', this.controller.delete)
-  }
-}
+router
+  .get('/', controllers.getAllArticles)
+  .get('/:id', controllers.getArticleById)
+  .post('/', controllers.createArticle)
+  .patch('/:id', controllers.updateArticle)
+  .delete('/:id', controllers.deleteArticle)
+
+export default router

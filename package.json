@@ -1,32 +1,30 @@
 {
-  "name": "grupo9api",
+  "name": "g9back",
   "version": "1.0.0",
-  "description": "grupo 9 noticias api",
-  "main": "index.js",
+  "description": "Trabajo Final Integrador programa Codo a Codo FullStack NodeJS 2024",
+  "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "fix": "standard --fix"
+    "start": "dotenvx run -f .env.prod -- node app.js",
+    "dev": "dotenvx run -f .env.dev -- node --watch app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/matipretz/grupo9api.git"
+    "url": "git+https://github.com/matipretz/g9back.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/matipretz/grupo9api/issues"
+    "url": "https://github.com/matipretz/g9back/issues"
   },
-  "homepage": "https://github.com/matipretz/grupo9api#readme",
+  "homepage": "https://github.com/matipretz/g9back#readme",
   "dependencies": {
-    "express": "4.19.2",
+    "@dotenvx/dotenvx": "0.45.0",
     "cors": "2.8.5",
-    "dotenv": "16.4.5"
+    "express": "4.19.2",
+    "mysql2": "3.10.1"
   },
   "devDependencies": {
-    "nodemon": "3.1.1",
     "standard": "17.1.0"
   }
 }

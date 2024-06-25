@@ -1,0 +1,47 @@
+.centroContacto {
+    padding: 40px;
+}
+
+.nobullets {
+    list-style-type: none;
+}
+
+.listadoTematica li {
+    margin: 5px 0;
+}
+
+.myForm {
+    margin: 40px 0;
+}
+
+.myForm label {
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.mapa {
+    width: 100% !important;
+    border: 0;
+}
+
+.subtitulo {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 25px 0px;
+}
+
+.Registro {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 0 rgb(0, 0, 0, 0.2);
+    outline: none;
+    color: dimgray;
+    margin-bottom: 25px;
+}
+
+button {
+    border: solid 0.5px;
+}

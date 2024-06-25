@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/6793cb11db.js" crossorigin="anonymous" defer></script>
+    <title>Contactanos</title>
+</head>
+<body>
+    <!-- head -->
+    <div class="head">
+        <h1>Grupo 9</h1>
+    </div>
+    <!-- Navbar -->
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="nosotros.html">Acerca de</a></li>
+        </ul>
+    </nav>
+    <!-- Main content -->
+    <main>
+        <!--Verfificar el submit en https://maildrop.cc/inbox/?mailbox=g9 -->
+        <section>
+            <div class="centroContacto">
+                <h2>Contactanos</h2>
+                <form class="myForm" id="myForm" method="post"
+                    action="https://forms.un-static.com/forms/85e2051181fe9ade1d5d86acaeedd5973df298a3">
+                    <p>(*) Campos obligatorios</p>
+                    <div><label for="tipoconsulta">Tipo de consulta (*)</label> </div>
+                    <div>
+                        <select id="tipoconsulta" name="tipoconsulta" class="Registro">
+                            <option selected value="0">Seleccioná un tipo de consulta</option>
+                            <option value="Contactar a un representante de ventas">Contactar a un representante de
+                                ventas
+                            </option>
+                            <option value="Quiero anunciar/publicitar en nuestra web de noticias">Quiero
+                                anunciar/publicitar en nuestra web de noticias
+                            </option>
+                            <option value="Quiero suscribirme">Quiero suscribirme</option>
+                            <option value="Enviar imagenes para concurso">Enviar imagenes para concurso</option>
+                            <option value="Otro tipo de consulta">Otro tipo de consulta</option>
+                        </select>
+                    </div>
+                    <div><label for="nombre">Nombre y Apellido (*)</label></div>
+                    <div><input type="text" name="nombre" id="nombre" placeholder="Nombre" class="Registro"></div>
+                    <div><label for="correo">Email (*)</label> </div>
+                    <div><input type="email" id="correo" name="correo" placeholder="Email" class="Registro"></div>
+                    <div>
+                        <textarea id="subject" name="subject" class="Registro" placeholder="Escribe algo..."
+                            style="height:200px;"></textarea>
+                    </div>
+                    <div>
+                        <p>Recibir noticias en tu mail</p>
+                    </div>
+                    <div>
+                        <ul class="nobullets listadoTematica">
+                            <li> <input name="Novedades" type="checkbox" id="chk1">
+                                <label for="chk1">Novedades destacadas</label>
+                            </li>
+                            <li> <input name="Tecnología" type="checkbox" id="chk2">
+                                <label for="chk2">Temática tecnología</label>
+                            </li>
+                            <li> <input name="Resto del mundo" type="checkbox" id="chk3">
+                                <label for="chk3">Temática Resto del mundo</label>
+                            </li>
+                            <li> <input name="Espectaculos" type="checkbox" id="chk4">
+                                <label for="chk4">Temática espectaculos</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>Subi una imagen para participar en consursos</p>
+                    </div>
+                    <div><input type="file" name="imagen" id="imagen" class="Registro " accept="image/*">
+                    </div>
+                    <div id="preview"></div>
+                    <div> <button
+                            class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+                            type="submit" id="btnEnviar">Enviar</button>
+                    </div>
+                </form>
+                <div class="subtitulo">Nuestra ubicaci&oacute;n : Florida 547</div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d517.2145433233526!2d-58.375343923313274!3d-34.60144523950009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacc66731a1b%3A0xe959182cfe060ecd!2sFlorida%20547%2C%20C1005AAK%20CABA!5e0!3m2!1ses-419!2sar!4v1683555730803!5m2!1ses-419!2sar"
+                    class="mapa" height="350" width="350" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="footlist">
+            <a class="footlink fa-brands fa-github fa-2x" href="https://github.com/matipretz/grupo9noticias"
+                title="GitHub" target="_blank"></a>
+            <a class="footlink fa-brands fa-instagram fa-2x" href="https://www.instagram.com/" title="Instagram"
+                target="_blank"></a>
+            <a class="footlink fa-brands fa-x-twitter fa-2x" href="https://twitter.com/" title="Twitter"
+                target="_blank"></a>
+            <a class="footlink fa-brands fa-linkedin fa-2x" href="https://ar.linkedin.com/" title="LinkedIn"
+                target="_blank"></a>
+            <a class="footlink fa-regular fa-envelope fa-2x" href="mailto:g9@maildrop.cc" title="Mail"
+                target="_blank"></a>
+        </div>
+        <p>
+            <small>&copy; 2024 Todos los derechos reservados Grupo 9 Noticias</small>
+        </p>
+        <div class="footlink fa-regular fa-circle-up fa-2x botonSubir" id="arriba">
+        </div>
+    </footer>
+    <script src="./assets/js/contacto.js"></script>
+    <script src="./assets/js/scroll.js"></script>
+    
+</body>
+</html>
