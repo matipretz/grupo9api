@@ -1,43 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
   const contenedor = document.getElementById('contenedorListadoNoticias')
 
-  async function getApiUrl () {
-    const localUrl = 'http://localhost:8090/noticias'
-    const remoteUrl = 'https://grupo9api-production.up.railway.app/noticias/'
+  const API_URL = 'http://localhost:8080/noticias/'
 
-    try {
-      const response = await fetch(localUrl)
-      if (response.ok) {
-        return localUrl
-      } else {
-        throw new Error('Local URL not available')
-      }
-    } catch (error) {
-      return remoteUrl
-    }
+  const setContenedorHTML = html => {
+    contenedor.innerHTML = html
   }
 
-  getApiUrl().then(apiUrl => {
-    const API_URL = apiUrl
-    console.log('Using API URL:', API_URL)
+  const mostrarError = mensaje => {
+    setContenedorHTML(`<div align="center">${mensaje}</div>`)
+  }
 
-    const setContenedorHTML = html => {
-      contenedor.innerHTML = html
-    }
-
-    const mostrarError = mensaje => {
-      setContenedorHTML(`<div align="center">${mensaje}</div>`)
-    }
-
-    const cargarNoticias = async () => {
-      try {
-        setContenedorHTML('<div align="center">Cargando noticias...</div>')
-        const res = await fetch(API_URL)
-        if (!res.ok) throw new Error('Error en la respuesta de la API')
-        const noticias = await res.json()
-        const html = noticias
-          .map(
-            noticia => `
+  const cargarNoticias = async () => {
+    try {
+      setContenedorHTML('<div align="center">Cargando noticias...</div>')
+      const res = await fetch(API_URL)
+      if (!res.ok) throw new Error('Error en la respuesta de la API')
+      const noticias = await res.json()
+      const html = noticias
+        .map(
+          noticia => `
         <a onclick="vernoticia(${noticia.id})">
           <article data-id="${noticia.id}">
             <div class="unaNotadetalle aparecer">
@@ -52,22 +34,22 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           </article>
         </a>`
-          )
-          .join('')
-        setContenedorHTML(html)
-      } catch (error) {
-        console.error('Error al cargar las noticias:', error)
-        mostrarError('Error al cargar las noticias.')
-      }
+        )
+        .join('')
+      setContenedorHTML(html)
+    } catch (error) {
+      console.error('Error al cargar las noticias:', error)
+      mostrarError('Error al cargar las noticias.')
     }
+  }
 
-    window.vernoticia = async id => {
-      try {
-        setContenedorHTML('<div align="center">Cargando noticia...</div>')
-        const res = await fetch(API_URL + `/${id}`)
-        if (!res.ok) throw new Error('Error en la respuesta de la API')
-        const noticia = await res.json()
-        const html = `
+  window.vernoticia = async id => {
+    try {
+      setContenedorHTML('<div align="center">Cargando noticia...</div>')
+      const res = await fetch(API_URL + `/${id}`)
+      if (!res.ok) throw new Error('Error en la respuesta de la API')
+      const noticia = await res.json()
+      const html = `
         <article data-id="${noticia.id}">
           <div class="unaNotadetalle aparecer">
             <div class="noticiasfoto">
@@ -80,13 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           </div>
         </article>`
-        setContenedorHTML(html)
-      } catch (error) {
-        console.error('Error al cargar la noticia:', error)
-        mostrarError('Error al cargar la noticia.')
-      }
+      setContenedorHTML(html)
+    } catch (error) {
+      console.error('Error al cargar la noticia:', error)
+      mostrarError('Error al cargar la noticia.')
     }
+  }
 
-    cargarNoticias()
-  })
+  cargarNoticias()
 })

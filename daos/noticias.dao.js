@@ -10,16 +10,8 @@ const init = async () => {
 
 const getAllArticles = async () => {
   await init()
-  const [rows] = await db.query(`SELECT
-    id,
-    categoria,
-    titulo,
-    cuerpo,
-    autor,
-    DATE_FORMAT(fecha, '%d-%m-%Y') AS fecha,
-    imagen
-FROM
-    noticias;
+  const [rows] = await db.query(`SELECT id, categoria, titulo, cuerpo, autor, fecha, imagen
+FROM noticias;
 `)
   return rows
 }

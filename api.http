@@ -1,9 +1,9 @@
 ### Recuperar todas las noticias
-GET http://localhost:8090/noticias
+GET https://grupo9api-production.up.railway.app/noticias/
 
 
 ### Recuperar una noticia por id
-GET http://localhost:8090/noticias/20
+GET https://grupo9api-production.up.railway.app/noticias/1
 
 ### Postear una noticia
 POST http://localhost:8090/noticias
@@ -33,5 +33,5 @@ Content-Type: application/json
 }
 
 ### Borrar una noticia por id
-DELETE  http://localhost:8090/noticias/11
+DELETE  https://grupo9api-production.up.railway.app/noticias/
 

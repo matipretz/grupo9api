@@ -1,4 +1,7 @@
 # BACK
+- REVISAR DOTENV!
+- Reescribir api.http
+
 - definir tabla usuarios/autores
 - trabajar dao y controller de usuarios/autores
 - implementar multer `||` imagenes por url
