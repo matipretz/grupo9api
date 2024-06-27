@@ -5,7 +5,7 @@ const config = {
   user: process.env.USER_DB,
   password: process.env.PASS_DB,
   database: process.env.DB,
-  port: parseInt(process.env.DB_PORT, 10), // Asegúrate de que el puerto es un número
+  port: process.env.DB_PORT,
   connectTimeout: 10000,
   trace: true
 }
@@ -14,7 +14,7 @@ const config = {
 const createConnection = async () => {
   try {
     const connection = await mysql.createConnection(config)
-    console.log('Conectado a la DB')
+    console.log(`Conectado a la DB en el puerto ${config.port}`)
     return connection
   } catch (err) {
     console.error('No se pudo conectar a la DB:', err.message)
