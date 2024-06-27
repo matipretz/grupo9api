@@ -1,7 +1,4 @@
-import dotenvx from '@dotenvx/dotenvx'
 import mysql from 'mysql2/promise'
-
-dotenvx.config()
 
 const config = {
   host: process.env.HOST_DB,

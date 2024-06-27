@@ -44,8 +44,7 @@
 #### De produccion:
 
 - [express](https://www.npmjs.com/package/express): Fast, unopinionated, minimalist web framework for Node.js.
-- [dotenvx](https://github.com/dotenvx/dotenvx): a better dotenv–from the creator of dotenv.
-- [cors](https://www.npmjs.com/package/cors): Node.js CORS middleware.
+- [dotenv](https://www.npmjs.com/package/dotenv): Dotenv is a zero-dependency module that loads environment variables from a `.env` file into `process.env`.
 - [mysql2](https://www.npmjs.com/package/mysql2): MySQL client for Node.js with focus on performance.
 
 #### De desarrollo:
