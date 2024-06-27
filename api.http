@@ -1,9 +1,9 @@
 ### Recuperar todas las noticias
-GET https://grupo9api-production.up.railway.app/noticias/
+GET https://grupo9api-production.up.railway.app:3307/noticias/
 
 
 ### Recuperar una noticia por id
-GET https://grupo9api-production.up.railway.app/noticias/1
+GET https://grupo9api-production.up.railway.app:3307/noticias/1
 
 ### Postear una noticia
 POST http://localhost:8090/noticias

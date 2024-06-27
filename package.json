@@ -5,8 +5,8 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "dotenvx run -f .env.prod -- node app.js",
-    "dev": "dotenvx run -f .env.dev -- node --watch app.js"
+    "start": "node app.js",
+    "dev": "node --watch app.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/matipretz/grupo9api#readme",
   "dependencies": {
-    "@dotenvx/dotenvx": "0.45.0",
     "cors": "2.8.5",
+    "dotenv": "16.4.5",
     "express": "4.19.2",
     "mysql2": "3.10.1"
   },
