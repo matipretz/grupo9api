@@ -1,19 +1,19 @@
 const emailValido = correo => {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)
 }
-let btnEnviar = document.getElementById('btnEnviar')
-let myForm = document.getElementById('myForm')
+const btnEnviar = document.getElementById('btnEnviar')
+const myForm = document.getElementById('myForm')
 btnEnviar.addEventListener('click', validarFormulario)
 
 function validarFormulario () {
   console.log('validar')
 
-  let tipoconsulta = document.getElementById('tipoconsulta')
-  let nombre = document.getElementById('nombre')
-  let correo = document.getElementById('correo')
+  const tipoconsulta = document.getElementById('tipoconsulta')
+  const nombre = document.getElementById('nombre')
+  const correo = document.getElementById('correo')
   let falta = ''
 
-  if (tipoconsulta.options[tipoconsulta.selectedIndex].value == 0) {
+  if (tipoconsulta.options[tipoconsulta.selectedIndex].value === 0) {
     falta += 'Falta completar el tipo de consulta\n'
     tipoconsulta.focus()
   }
@@ -35,18 +35,17 @@ function validarFormulario () {
       'Gracias por contactarse con nosotros. \nSu mensaje será respondido a la brevedad.'
     )
     myForm.submit()
-    return
   }
 }
 
 document.getElementById('imagen').addEventListener('change', function (event) {
-  var file = event.target.files[0]
-  var preview = document.getElementById('preview')
+  const file = event.target.files[0]
+  const preview = document.getElementById('preview')
   preview.innerHTML = ''
 
-  var imgContainer = document.createElement('div')
+  const imgContainer = document.createElement('div')
   imgContainer.style.marginBottom = '20px'
-  var img = document.createElement('img')
+  const img = document.createElement('img')
   img.src = URL.createObjectURL(file)
   img.style.height = '100px'
   img.style.display = 'block'

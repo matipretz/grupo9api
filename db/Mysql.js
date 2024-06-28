@@ -10,7 +10,6 @@ const config = {
   trace: true
 }
 
-// Función para crear la conexión a la base de datos
 const createConnection = async () => {
   try {
     const connection = await mysql.createConnection(config)
@@ -23,7 +22,6 @@ const createConnection = async () => {
   }
 }
 
-// Función para inicializar la base de datos
 const initializeDatabase = async () => {
   const connection = await createConnection()
   return connection
