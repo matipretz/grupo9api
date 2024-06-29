@@ -6,6 +6,7 @@
     const notificaAutor = document.getElementById('autornoticia')
     const noticiaFecha = document.getElementById('fechanoticia')
     const noticiaImagen = document.getElementById('imagennoticia')
+    const categorianoticia = document.getElementById('categorianoticia')
     const btnEnviar = document.getElementById('btnEnviar')
   
     const API_URL = 'https://grupo9api-production.up.railway.app/noticias'
@@ -95,9 +96,14 @@
     try {
             
         setContenedorHTML('<div align="center">Cargando noticias...</div>')
-        const res = await fetch(API_URL + '/' + idNoticia, { method: 'PATCH'})
+        const res = await fetch(API_URL + '/' + idNoticia, { 
+            method: 'PATCH',
+            body: 'categoria=${categorianoticia.value}&titulo=${noticiaTitulo.value}&cuerpo=${noticiaTexto.value}&autor=${notificaAutor.value}&fecha=${noticiaFecha.value}&imagen=${noticiaImagen.value}'
+        })
         if (!res.ok) throw new Error('Error en la respuesta de la API actualizar')
-        const respuesta = await res.json()          
+        const respuesta = await res.json()  
+        
+  
         
         document.getElementById("altanoticia").style.display="none"
         document.getElementById("contenedorListadoNoticias").style.display="block" 
@@ -124,11 +130,12 @@ const editar = async (idNoticia) => {
             
             mostrar("altanoticia")
 
-            noticiaTitulo.value = respuesta.titulo
+            noticiaTitulo.value = respuesta.titulo         
             noticiaTexto.value = respuesta.cuerpo
             notificaAutor.value = respuesta.autor
             noticiaFecha.value = respuesta.fecha
             noticiaImagen.value = respuesta.imagen
+            categorianoticia.value = respuesta.categoria
        
             btnEnviar.addEventListener("click",function(){
                 actualizar(idNoticia)               
