@@ -7,6 +7,7 @@
     const noticiaFecha = document.getElementById('fechanoticia')
     const noticiaImagen = document.getElementById('imagennoticia')
     const categorianoticia = document.getElementById('categorianoticia')
+    const fechanoticialb = document.getElementById('fechanoticialb')
     const btnEnviar = document.getElementById('btnEnviar')
   
     const API_URL = 'https://grupo9api-production.up.railway.app/noticias'
@@ -32,13 +33,13 @@
           .map(
             noticia => `         
             <article data-id="${noticia.id}">
-              <div class="unaNotadetalle aparecer">
+              <div class="unaNotadetalle">
                 <div class="noticiasfoto">
                   <img src="${noticia.imagen}" alt="${noticia.titulo}">
                 </div>
                 <div class="noticiasTexto">
                   <p class="text-sm font-medium uppercase tracking-widest text-pink-500">${noticia.categoria}</p>
-                  <p class="text-xl font-bold sm:text-2xl slide-in-left">${noticia.titulo}</p>
+                  <p class="text-xl font-bold sm:text-2xl ">${noticia.titulo}</p>
                   <p>Por: ${noticia.autor} el ${noticia.fecha}</p>
                   <div class="botonera"> <a onclick="editar(${noticia.id})"><span class="mdi mdi-pencil"></span> Editar</a> <a onclick="borrar(${noticia.id})"><span class="mdi mdi-delete"></span> Borrar</a></div>
                 </div>
@@ -62,13 +63,13 @@
         const noticia = await res.json()
         const html = `
           <article data-id="${noticia.id}">
-            <div class="unaNotadetalle aparecer">
+            <div class="unaNotadetalle">
               <div class="noticiasfoto">
                 <img src="${noticia.imagen}" alt="${noticia.titulo}">
               </div>
               <div class="noticiasTexto">
                 <p class="text-sm font-medium uppercase tracking-widest text-pink-500">${noticia.categoria}</p>
-                <p class="text-xl font-bold sm:text-2xl slide-in-left">${noticia.titulo}</p>
+                <p class="text-xl font-bold sm:text-2xl">${noticia.titulo}</p>
                 <p class="text-sm copete">${noticia.cuerpo}</p>
               </div>
             </div>
@@ -95,12 +96,15 @@
  const actualizar = async (idNoticia) => {
     try {
         
+        let arr1 = noticiaFecha.value.split('-');
+        let fecha = arr1[2] + "-" + arr1[1] + "-" + arr1[0];
+
         var payload = {
             categoria: categorianoticia.value,
             titulo: noticiaTitulo.value,
             cuerpo: noticiaTexto.value,
             autor: notificaAutor.value,
-            fecha: noticiaFecha.value,
+            fecha: fecha,
             imagen: noticiaImagen.value
         };
         
@@ -136,13 +140,15 @@
 
 const agregar = async () => {
     try {
-           
-        var payload = {
+        let fecha=new Date(); 
+        let fechaAlta = d.getFullYear() + "-" + ("0"+(d.getMonth()+1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2)
+        
+        let payload = {
             categoria: categorianoticia.value,
             titulo: noticiaTitulo.value,
             cuerpo: noticiaTexto.value,
             autor: notificaAutor.value,
-            fecha: noticiaFecha.value,
+            fecha: fechaAlta,
             imagen: noticiaImagen.value
         };
         
@@ -183,7 +189,9 @@ const preparoAlta = () => {
     noticiaTitulo.value = ""        
     noticiaTexto.value = ""       
     notificaAutor.value = ""       
-    noticiaFecha.value = ""       
+    noticiaFecha.value = ""  
+    noticiaFecha.style.display="none"     
+    fechanoticialb.style.display="none"     
     noticiaImagen.value =""       
     categorianoticia.value =""   
     btnEnviar.addEventListener("click",function(){
@@ -196,13 +204,18 @@ const editar = async (idNoticia) => {
      
             try {
             
-            setContenedorHTML('<div align="center">Cargando noticias...</div>')
+            setContenedorHTML('<div align="center">Cargando noticia...</div>')
             const res = await fetch(API_URL + '/' + idNoticia)
             if (!res.ok) throw new Error('Error en la respuesta de la API editar')
             const respuesta = await res.json()          
             
             mostrar("altanoticia")
 
+
+          
+
+            noticiaFecha.style.display="block"   
+            fechanoticialb.style.display="block"   
             noticiaTitulo.value = respuesta.titulo         
             noticiaTexto.value = respuesta.cuerpo
             notificaAutor.value = respuesta.autor
