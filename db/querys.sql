@@ -5,6 +5,74 @@ CREATE DATABASE noticiasdb_combineleg;
 USE noticiasdb_combineleg;
 
 DROP TABLE IF EXISTS noticias;
+DROP TABLE IF EXISTS usuario;
+DROP TABLE IF EXISTS categoria;
+DROP TABLE IF EXISTS noticia_foto;
+
+CREATE TABLE usuario (
+  usuario_id int(11) unsigned NOT NULL AUTO_INCREMENT,
+  nombre varchar(50) NOT NULL DEFAULT '',
+  email varchar(100) NOT NULL DEFAULT '',
+  password varchar(150) NOT NULL DEFAULT '',
+  PRIMARY KEY (usuario_id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO
+    usuario (usuario_id, nombre,email,password)
+VALUES
+    (
+        1,
+        'Noelia',
+				'noelia@gmail.com',
+				''      
+    ),
+		(
+        2,
+        'Marcos',
+				'marcos@gmail.com', 
+				''     
+    ),
+		(
+        3,
+        'Matias',
+				'matias@gmail.com',     
+				''
+    ),
+		(
+        4,
+        'Lucas',
+				'lucas@gmail.com',
+		   	''	     
+    );
+
+CREATE TABLE categoria (
+  `categoria_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(60) NOT NULL DEFAULT '',
+  PRIMARY KEY (`categoria_id`)
+)  ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+INSERT INTO
+    categoria (categoria_id, nombre)
+VALUES
+    (
+        1,
+        'Tecnología'      
+    ),
+		(
+        2,
+        'Espectáculos'      
+    )		,
+		(
+        3,
+        'Energias renovables'     
+    );
+
+CREATE TABLE noticia_foto (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  noticia_id int(11) unsigned NOT NULL DEFAULT '0',
+  foto varchar(100) NOT NULL DEFAULT '',
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE
     noticias (
