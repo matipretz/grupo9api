@@ -21,8 +21,8 @@
     <!-- Navbar -->
     <nav>
         <ul class="menu">
-            <li class=""><a >Agregar</a></li>
-            <li class="selected"><a href="index.html">Admin</a></li>
+            <li class=""><a onclick="mostrar('altanoticia')" >Agregar</a></li>
+            <li class="selected"><a onclick="mostrar('contenedorListadoNoticias')">Noticias</a></li>
            
             <li class=""><a href="../index.html">Salir</a></li>
           
@@ -31,10 +31,7 @@
     <!-- Main content -->
     <main>
       
-        <div class="contenedorListadoNoticias " id="contenedorListadoNoticias">  
-        </div>
-
-        <div class="centroLogin" style="display:none;" >
+        <div class="centroLogin" style="display:none;" id="altanoticia">
             
             <form class="myForm" id="myForm" method="post"
             action="./admin/index.html">
@@ -52,6 +49,11 @@
             </div>
         </form>
         </div>
+
+        <div class="contenedorListadoNoticias " id="contenedorListadoNoticias">  
+        </div>
+
+        
     </main>
     <!-- Footer -->
     <script src="../assets/js/noticias.admin.js"></script>

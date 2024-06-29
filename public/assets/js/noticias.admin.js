@@ -1,10 +1,14 @@
-document.addEventListener('DOMContentLoaded', () => {
+
+
     const contenedor = document.getElementById('contenedorListadoNoticias')
   
     const API_URL = 'https://grupo9api-production.up.railway.app/noticias'
     const setContenedorHTML = html => {
       contenedor.innerHTML = html
     }
+
+
+  
   
     const mostrarError = mensaje => {
       setContenedorHTML(`<div align="center">${mensaje}</div>`)
@@ -70,5 +74,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     cargarNoticias()
-  })
+
+
+
+  function mostrar(idElemento){
+    document.getElementById("altanoticia").style.display="none"
+    document.getElementById("contenedorListadoNoticias").style.display="none"
+    document.getElementById(idElemento).style.display="block"
+    if (idElemento == 'contenedorListadoNoticias') cargarNoticias()
+}
   
+
+const borrar = async (idNoticia) => {
+    try {
+      setContenedorHTML('<div align="center">Cargando noticias...</div>')
+      const res = await fetch(API_URL + '/' + idNoticia, { method: 'DELETE'})
+      if (!res.ok) throw new Error('Error en la respuesta de la API')
+      const respuesta = await res.json()          
+       
+     
+      setContenedorHTML(respuesta.message)
+
+      setTimeout("cargarNoticias()",2000);
+
+    } catch (error) {
+      console.error('Error al cargar las noticias:', error)
+      mostrarError('Error al cargar las noticias.')
+    }
+  }
+

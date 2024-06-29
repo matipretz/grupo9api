@@ -18,6 +18,7 @@ nav {
     justify-content: center;
     align-items: stretch;
     height: 70px;
+    cursor: pointer;
 }
 
 .menu li {
