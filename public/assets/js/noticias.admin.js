@@ -141,7 +141,7 @@
 const agregar = async () => {
     try {
         let fecha=new Date(); 
-        let fechaAlta = d.getFullYear() + "-" + ("0"+(d.getMonth()+1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2)
+        let fechaAlta = fecha.getFullYear() + "-" + ("0"+(fecha.getMonth()+1)).slice(-2) + "-" + ("0" + fecha.getDate()).slice(-2)
         
         let payload = {
             categoria: categorianoticia.value,
