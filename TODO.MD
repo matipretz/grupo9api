@@ -18,10 +18,10 @@
 
 
 ### Criterios de evaluación
-1. La base de datos debe desarrollarse con MySQL, tener al menos
+1. ✅La base de datos debe desarrollarse con MySQL, tener al menos
    4 tablas, con al menos 4 diferentes tipos de datos. (10 puntos)
 
-2. Entre las tablas al menos deberá haber una relación “uno a
+2. ✅Entre las tablas al menos deberá haber una relación “uno a
    muchos”. (10 puntos)
 
 3. ✅A través del servidor levantado con Node y Express se debe poder
@@ -46,4 +46,4 @@
 9. Se valorará la aplicación de un token o método de
    autenticación. (5 puntos)
 
-10. El backend debe estar integrado con un frontend. (5 puntos)
+10. ✅El backend debe estar integrado con un frontend. (5 puntos)
