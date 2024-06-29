@@ -53,10 +53,10 @@
             <div><label for="imagennoticia">imagen</label></div>
             <div><input type="text" name="imagennoticia" id="imagennoticia" placeholder="" class="Registro"></div>
             <div> 
-                
+                <input type="hidden" value="0" id="idnoticia" name="idnoticia">
                 <button
                     class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
-                    type="button" name="btnEnviar" id="btnEnviar">Enviar</button>
+                    type="button" name="btnEnviar" id="btnEnviar" onclick="enviar()">Enviar</button>
             </div>
         </form>
         </div>

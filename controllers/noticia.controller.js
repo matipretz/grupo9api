@@ -47,7 +47,7 @@ const deleteArticle = async (req, res) => {
   try {
     const success = await articleDao.deleteArticle(req.params.id)
     if (success) {
-      res.json({ message: 'Article deleted successfully' })
+      res.json({ message: 'Nota borrada correctamente' })
       res.status(204).end()
     } else {
       res.status(404).json({ error: 'Article not found' })
