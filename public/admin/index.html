@@ -34,18 +34,27 @@
         <div class="centroLogin" style="display:none;" id="altanoticia">
             
             <form class="myForm" id="myForm" method="post"
-            action="./admin/index.html">
+            action="">
            
             
-            <div><label for="nombre">Titulo</label></div>
-            <div><input type="text" name="nombre" id="nombre" placeholder="" class="Registro"></div>
-            <div><label for="correo">Texto</label> </div>
-            <div> <textarea id="cuerpo" name="cuerpo" class="Registro" placeholder=""
+            <div><label for="titulonoticia">Titulo</label></div>
+            <div><input type="text" name="titulonoticia" id="titulonoticia" placeholder="" class="Registro"></div>
+        
+         
+            <div><label for="textonoticia">Texto</label> </div>
+            <div> <textarea id="textonoticia" name="textonoticia" class="Registro" placeholder=""
                 style="height:200px;"></textarea></div>
-            
-            <div> <button
+                <div><label for="autornoticia">Autor</label></div>
+            <div><input type="text" name="autornoticia" id="autornoticia" placeholder="" class="Registro"></div>
+            <div><label for="fechanoticia">Fecha</label></div>
+            <div><input type="text" name="fechanoticia" id="fechanoticia" placeholder="" class="Registro"></div>
+            <div><label for="imagennoticia">imagen</label></div>
+            <div><input type="text" name="imagennoticia" id="imagennoticia" placeholder="" class="Registro"></div>
+            <div> 
+                
+                <button
                     class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
-                    type="submit" id="btnEnviar">Enviar</button>
+                    type="button" name="btnEnviar" id="btnEnviar">Enviar</button>
             </div>
         </form>
         </div>

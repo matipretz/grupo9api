@@ -1,6 +1,12 @@
 
 
     const contenedor = document.getElementById('contenedorListadoNoticias')
+    const noticiaTitulo = document.getElementById('titulonoticia')
+    const noticiaTexto = document.getElementById('textonoticia')
+    const notificaAutor = document.getElementById('autornoticia')
+    const noticiaFecha = document.getElementById('fechanoticia')
+    const noticiaImagen = document.getElementById('imagennoticia')
+    const btnEnviar = document.getElementById('btnEnviar')
   
     const API_URL = 'https://grupo9api-production.up.railway.app/noticias'
     const setContenedorHTML = html => {
@@ -83,7 +89,57 @@
     document.getElementById(idElemento).style.display="block"
     if (idElemento == 'contenedorListadoNoticias') cargarNoticias()
 }
-  
+
+
+ const actualizar = async (idNoticia) => {
+    try {
+            
+        setContenedorHTML('<div align="center">Cargando noticias...</div>')
+        const res = await fetch(API_URL + '/' + idNoticia, { method: 'PATCH'})
+        if (!res.ok) throw new Error('Error en la respuesta de la API actualizar')
+        const respuesta = await res.json()          
+        
+        document.getElementById("altanoticia").style.display="none"
+        document.getElementById("contenedorListadoNoticias").style.display="block" 
+        setContenedorHTML(respuesta.message)
+
+        setTimeout("cargarNoticias()",2000);
+
+        } catch (error) {
+            document.getElementById("altanoticia").style.display="none"
+            document.getElementById("contenedorListadoNoticias").style.display="block" 
+        console.error('Error al actualizar la noticia ' + idNoticia, error)
+        mostrarError('Error al actualizar la noticia')
+        }
+}
+
+const editar = async (idNoticia) => {
+     
+            try {
+            
+            setContenedorHTML('<div align="center">Cargando noticias...</div>')
+            const res = await fetch(API_URL + '/' + idNoticia)
+            if (!res.ok) throw new Error('Error en la respuesta de la API editar')
+            const respuesta = await res.json()          
+            
+            mostrar("altanoticia")
+
+            noticiaTitulo.value = respuesta.titulo
+            noticiaTexto.value = respuesta.cuerpo
+            notificaAutor.value = respuesta.autor
+            noticiaFecha.value = respuesta.fecha
+            noticiaImagen.value = respuesta.imagen
+       
+            btnEnviar.addEventListener("click",function(){
+                actualizar(idNoticia)               
+             });
+
+            } catch (error) {
+            console.error('Error al cargar las noticias:', error)
+            mostrarError('Error al cargar las noticias.')
+            }
+     
+  }
 
 const borrar = async (idNoticia) => {
     if (confirm("Borrar noticia?") == true) {
@@ -91,7 +147,7 @@ const borrar = async (idNoticia) => {
             
             setContenedorHTML('<div align="center">Cargando noticias...</div>')
             const res = await fetch(API_URL + '/' + idNoticia, { method: 'DELETE'})
-            if (!res.ok) throw new Error('Error en la respuesta de la API')
+            if (!res.ok) throw new Error('Error en la respuesta de la API borrar')
             const respuesta = await res.json()          
             
             
