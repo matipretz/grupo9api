@@ -36,6 +36,15 @@
 .copete {
     margin-top: 10px;
 }
+.botonera {
+    margin: 20px 0px;
+}
+.botonera a{
+    background: #ddd;
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
 
 
 @media screen and (max-width: 768px) {
