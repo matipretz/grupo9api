@@ -18,12 +18,23 @@ nav {
     justify-content: center;
     align-items: stretch;
     height: 70px;
+    cursor: pointer;
 }
 
 .menu li {
     display: inline-block;
-    width: 90px;
+    width: 120px;
 }
+
+.menu .selected a {   
+background: #ddd;
+padding: 8px 10px;
+border-radius: 5px;
+
+
+}
+
+ 
 
 .menu li a {
     text-decoration: none;
