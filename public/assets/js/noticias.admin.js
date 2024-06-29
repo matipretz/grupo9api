@@ -86,20 +86,23 @@
   
 
 const borrar = async (idNoticia) => {
-    try {
-      setContenedorHTML('<div align="center">Cargando noticias...</div>')
-      const res = await fetch(API_URL + '/' + idNoticia, { method: 'DELETE'})
-      if (!res.ok) throw new Error('Error en la respuesta de la API')
-      const respuesta = await res.json()          
-       
-     
-      setContenedorHTML(respuesta.message)
+    if (confirm("Borrar noticia?") == true) {
+            try {
+            
+            setContenedorHTML('<div align="center">Cargando noticias...</div>')
+            const res = await fetch(API_URL + '/' + idNoticia, { method: 'DELETE'})
+            if (!res.ok) throw new Error('Error en la respuesta de la API')
+            const respuesta = await res.json()          
+            
+            
+            setContenedorHTML(respuesta.message)
 
-      setTimeout("cargarNoticias()",2000);
+            setTimeout("cargarNoticias()",2000);
 
-    } catch (error) {
-      console.error('Error al cargar las noticias:', error)
-      mostrarError('Error al cargar las noticias.')
+            } catch (error) {
+            console.error('Error al cargar las noticias:', error)
+            mostrarError('Error al cargar las noticias.')
+            }
     }
   }
 
