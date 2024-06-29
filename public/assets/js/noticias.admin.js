@@ -94,11 +94,26 @@
 
  const actualizar = async (idNoticia) => {
     try {
-            
-        setContenedorHTML('<div align="center">Cargando noticias...</div>')
+        
+        var payload = {
+            categoria: categorianoticia.value,
+            titulo: noticiaTitulo.value,
+            cuerpo: noticiaTexto.value,
+            autor: notificaAutor.value,
+            fecha: noticiaFecha.value,
+            imagen: noticiaImagen.value
+        };
+        
+        let data = JSON.stringify(payload);
+
+        setContenedorHTML('<div align="center">Actualizando noticia...</div>')
         const res = await fetch(API_URL + '/' + idNoticia, { 
             method: 'PATCH',
-            body: 'categoria=${categorianoticia.value}&titulo=${noticiaTitulo.value}&cuerpo=${noticiaTexto.value}&autor=${notificaAutor.value}&fecha=${noticiaFecha.value}&imagen=${noticiaImagen.value}'
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+            body: (data) 
         })
         if (!res.ok) throw new Error('Error en la respuesta de la API actualizar')
         const respuesta = await res.json()  
@@ -107,7 +122,7 @@
         
         document.getElementById("altanoticia").style.display="none"
         document.getElementById("contenedorListadoNoticias").style.display="block" 
-        setContenedorHTML(respuesta.message)
+        setContenedorHTML('<div align="center">Noticia acctualizada correctamente</div>')
 
         setTimeout("cargarNoticias()",2000);
 
@@ -119,14 +134,30 @@
         }
 }
 
-const agregar = async (idNoticia) => {
+const agregar = async () => {
     try {
-            
-        setContenedorHTML('<div align="center">Cargando noticias...</div>')
+           
+        var payload = {
+            categoria: categorianoticia.value,
+            titulo: noticiaTitulo.value,
+            cuerpo: noticiaTexto.value,
+            autor: notificaAutor.value,
+            fecha: noticiaFecha.value,
+            imagen: noticiaImagen.value
+        };
+        
+        let data = JSON.stringify( payload );           
+                  
+        setContenedorHTML('<div align="center">Cargando noticia...</div>')
         const res = await fetch(API_URL, { 
             method: 'POST',
-            body: 'categoria=${categorianoticia.value}&titulo=${noticiaTitulo.value}&cuerpo=${noticiaTexto.value}&autor=${notificaAutor.value}&fecha=${noticiaFecha.value}&imagen=${noticiaImagen.value}'
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+            body: (data)            
         })
+        .catch(err => console.error(err))
         if (!res.ok) throw new Error('Error en la respuesta de la API agregar')
         const respuesta = await res.json()  
         
@@ -134,7 +165,8 @@ const agregar = async (idNoticia) => {
         
         document.getElementById("altanoticia").style.display="none"
         document.getElementById("contenedorListadoNoticias").style.display="block" 
-        setContenedorHTML(respuesta.message)
+      
+        setContenedorHTML('<div align="center">Noticia agregada correctamente</div>')
 
         setTimeout("cargarNoticias()",2000);
 
@@ -142,7 +174,7 @@ const agregar = async (idNoticia) => {
             document.getElementById("altanoticia").style.display="none"
             document.getElementById("contenedorListadoNoticias").style.display="block" 
         console.error('Error al agregar la noticia ', error)
-        mostrarError('Error al agregar la noticia')
+        mostrarError('Error al agregar la noticia ' + error)
         }
 }
 
@@ -155,7 +187,7 @@ const preparoAlta = () => {
     noticiaImagen.value =""       
     categorianoticia.value =""   
     btnEnviar.addEventListener("click",function(){
-        agregar(idNoticia)               
+        agregar()               
      });
 
 }
@@ -210,3 +242,5 @@ const borrar = async (idNoticia) => {
     }
   }
 
+
+ 
