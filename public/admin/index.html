@@ -7,8 +7,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/noticias.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/6793cb11db.js" crossorigin="anonymous" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.4.47/css/materialdesignicons.min.css" rel='stylesheet'>
     <title>Login</title>
 </head>
 <body>
@@ -19,14 +21,20 @@
     <!-- Navbar -->
     <nav>
         <ul class="menu">
-            <li class="selected"><a href="index.html">Alta</a></li>
-            <li><a href="listado.html">Noticias</a></li>
-            <li><a href="../index.html">Salir</a></li>
+            <li class=""><a >Agregar</a></li>
+            <li class="selected"><a href="index.html">Admin</a></li>
+           
+            <li class=""><a href="../index.html">Salir</a></li>
+          
         </ul>
     </nav>
     <!-- Main content -->
     <main>
-        <div class="centroLogin" >
+      
+        <div class="contenedorListadoNoticias " id="contenedorListadoNoticias">  
+        </div>
+
+        <div class="centroLogin" style="display:none;" >
             
             <form class="myForm" id="myForm" method="post"
             action="./admin/index.html">
@@ -46,6 +54,6 @@
         </div>
     </main>
     <!-- Footer -->
-     
+    <script src="../assets/js/noticias.admin.js"></script>
 </body>
 </html>

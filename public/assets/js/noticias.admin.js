@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const res = await fetch(API_URL)
         if (!res.ok) throw new Error('Error en la respuesta de la API')
         const noticias = await res.json()
+       
         const html = noticias
           .map(
-            noticia => `
-         
+            noticia => `         
             <article data-id="${noticia.id}">
               <div class="unaNotadetalle aparecer">
                 <div class="noticiasfoto">
@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
               </div>
             </article>
-         `
-          )
+         `)
           .join('')
+         
         setContenedorHTML(html)
       } catch (error) {
         console.error('Error al cargar las noticias:', error)
