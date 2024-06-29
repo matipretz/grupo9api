@@ -119,6 +119,47 @@
         }
 }
 
+const agregar = async (idNoticia) => {
+    try {
+            
+        setContenedorHTML('<div align="center">Cargando noticias...</div>')
+        const res = await fetch(API_URL, { 
+            method: 'POST',
+            body: 'categoria=${categorianoticia.value}&titulo=${noticiaTitulo.value}&cuerpo=${noticiaTexto.value}&autor=${notificaAutor.value}&fecha=${noticiaFecha.value}&imagen=${noticiaImagen.value}'
+        })
+        if (!res.ok) throw new Error('Error en la respuesta de la API agregar')
+        const respuesta = await res.json()  
+        
+  
+        
+        document.getElementById("altanoticia").style.display="none"
+        document.getElementById("contenedorListadoNoticias").style.display="block" 
+        setContenedorHTML(respuesta.message)
+
+        setTimeout("cargarNoticias()",2000);
+
+        } catch (error) {
+            document.getElementById("altanoticia").style.display="none"
+            document.getElementById("contenedorListadoNoticias").style.display="block" 
+        console.error('Error al agregar la noticia ', error)
+        mostrarError('Error al agregar la noticia')
+        }
+}
+
+const preparoAlta = () => {
+    mostrar("altanoticia")
+    noticiaTitulo.value = ""        
+    noticiaTexto.value = ""       
+    notificaAutor.value = ""       
+    noticiaFecha.value = ""       
+    noticiaImagen.value =""       
+    categorianoticia.value =""   
+    btnEnviar.addEventListener("click",function(){
+        agregar(idNoticia)               
+     });
+
+}
+
 const editar = async (idNoticia) => {
      
             try {
