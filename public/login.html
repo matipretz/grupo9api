@@ -7,7 +7,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <link rel="stylesheet" href="./assets/css/noticias.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/6793cb11db.js" crossorigin="anonymous" defer></script>
     <title>Login</title>
@@ -28,7 +27,22 @@
     </nav>
     <!-- Main content -->
     <main>
-        <div class=" " id="">aca va el login
+        <div class="centroLogin" >
+            
+            <form class="myForm" id="myForm" method="post"
+            action="./admin/index.html">
+           
+            
+            <div><label for="nombre">Usuario</label></div>
+            <div><input type="text" name="nombre" id="nombre" placeholder="Nombre" class="Registro"></div>
+            <div><label for="correo">Password</label> </div>
+            <div><input type="password" id="password" name="password" placeholder="Password" class="Registro"></div>
+            
+            <div> <button
+                    class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+                    type="submit" id="btnEnviar">Enviar</button>
+            </div>
+        </form>
         </div>
     </main>
     <!-- Footer -->

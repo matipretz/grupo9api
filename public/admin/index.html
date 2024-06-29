@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/6793cb11db.js" crossorigin="anonymous" defer></script>
+    <title>Login</title>
+</head>
+<body>
+    <!-- head -->
+    <div class="head">
+        <h1>Admin  9</h1>
+    </div>
+    <!-- Navbar -->
+    <nav>
+        <ul class="menu">
+            <li class="selected"><a href="index.html">Alta</a></li>
+            <li><a href="listado.html">Noticias</a></li>
+            <li><a href="../index.html">Salir</a></li>
+        </ul>
+    </nav>
+    <!-- Main content -->
+    <main>
+        <div class="centroLogin" >
+            
+            <form class="myForm" id="myForm" method="post"
+            action="./admin/index.html">
+           
+            
+            <div><label for="nombre">Titulo</label></div>
+            <div><input type="text" name="nombre" id="nombre" placeholder="" class="Registro"></div>
+            <div><label for="correo">Texto</label> </div>
+            <div> <textarea id="cuerpo" name="cuerpo" class="Registro" placeholder=""
+                style="height:200px;"></textarea></div>
+            
+            <div> <button
+                    class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+                    type="submit" id="btnEnviar">Enviar</button>
+            </div>
+        </form>
+        </div>
+    </main>
+    <!-- Footer -->
+     
+</body>
+</html>
