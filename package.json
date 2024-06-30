@@ -1,6 +1,6 @@
 {
   "name": "grupo9api",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Trabajo Final Integrador programa Codo a Codo FullStack NodeJS 2024",
   "main": "app.js",
   "type": "module",

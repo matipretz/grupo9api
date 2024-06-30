@@ -11,8 +11,8 @@
     const fechanoticialb = document.getElementById('fechanoticialb')
    
   
-    const API_URL = 'https://grupo9api-production.up.railway.app/noticias'
-    const BASE_URL = 'https://grupo9api-production.up.railway.app'
+    const API_URL = 'https://grupo9api.up.railway.app/noticias'
+    const BASE_URL = 'https://grupo9api.up.railway.app'
     const setContenedorHTML = html => {
       contenedor.innerHTML = html
     }

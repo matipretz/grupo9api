@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const contenedor = document.getElementById('contenedorListadoNoticias')
 
-  const API_URL = 'https://grupo9api-production.up.railway.app/noticias'
+  const API_URL = 'https://grupo9api.up.railway.app/noticias'
   const setContenedorHTML = html => {
     contenedor.innerHTML = html
   }

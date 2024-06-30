@@ -1,13 +1,13 @@
 ### Recuperar todas las noticias
-GET https://grupo9api-production.up.railway.app:3307/noticias/
+GET https://grupo9api.up.railway.app:3307/noticias/
 ### Recuperar todas las noticias LOCAL
 GET http://localhost:8080/noticias/
 ### Recuperar una noticia por id
-GET https://grupo9api-production.up.railway.app:3307/noticias/3
+GET https://grupo9api.up.railway.app:3307/noticias/3
 ### Recuperar una noticia por id LOCAL
 GET http://localhost:8080/noticias/3
 ### Postear una noticia
-POST http://localhost:8090/noticias
+POST http://localhost:8080/noticias
 Content-Type: application/json
 
 {
@@ -21,7 +21,7 @@ Content-Type: application/json
 }
 
 ### Actualizar una noticia
-PATCH http://localhost:8090/noticias/20
+PATCH http://localhost:8080/noticias/20
 Content-Type: application/json
 
 {
@@ -34,5 +34,5 @@ Content-Type: application/json
 }
 
 ### Borrar una noticia por id
-DELETE  https://grupo9api-production.up.railway.app/noticias/
+DELETE  https://grupo9api.up.railway.app/noticias/
 
