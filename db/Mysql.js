@@ -1,6 +1,6 @@
 import mysql from 'mysql2/promise'
 
-const config = {
+const DEFAULT_CONFIG = {
   host: process.env.HOST_DB,
   user: process.env.USER_DB,
   password: process.env.PASS_DB,
@@ -9,15 +9,15 @@ const config = {
   connectTimeout: 10000,
   trace: true
 }
+const connectionString = process.env.DATABASE_URL ?? DEFAULT_CONFIG
 
 const createConnection = async () => {
   try {
-    const connection = await mysql.createConnection(config)
-    console.log(`Conectado a la DB en el puerto ${config.port}`)
+    const connection = await mysql.createConnection(connectionString)
+    console.log('Conectado a la DB')
     return connection
   } catch (err) {
     console.error('No se pudo conectar a la DB:', err.message)
-    console.error(`DB on port ${config.port}`)
     throw err
   }
 }

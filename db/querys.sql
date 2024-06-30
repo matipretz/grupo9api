@@ -56,11 +56,11 @@ INSERT INTO
 VALUES
     (
         1,
-        'TecnologÌa'      
+        'Tecnolog√≠a'      
     ),
 		(
         2,
-        'Espect·culos'      
+        'Espect√°culos'      
     )		,
 		(
         3,
