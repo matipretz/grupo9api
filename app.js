@@ -15,5 +15,4 @@ app
   .use('/noticias', router)
   .listen(PORT, () => {
     console.log(`server listening on port ${PORT}`)
-    console.error(`${process.env.ENV}`)
   })
