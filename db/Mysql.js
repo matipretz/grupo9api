@@ -1,15 +1,6 @@
 import mysql from 'mysql2/promise'
 
-const DEFAULT_CONFIG = {
-  host: process.env.HOST_DB,
-  user: process.env.USER_DB,
-  password: process.env.PASS_DB,
-  database: process.env.DB,
-  port: process.env.DB_PORT,
-  connectTimeout: 10000,
-  trace: true
-}
-const connectionString = process.env.DATABASE_URL ?? DEFAULT_CONFIG
+const connectionString = process.env.DATABASE_URL
 
 const createConnection = async () => {
   try {

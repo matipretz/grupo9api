@@ -8,16 +8,8 @@
     "start": "node app.js",
     "dev": "node --watch app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/matipretz/grupo9api.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/matipretz/grupo9api/issues"
-  },
-  "homepage": "https://github.com/matipretz/grupo9api#readme",
   "dependencies": {
     "cors": "2.8.5",
     "dotenv": "16.4.5",

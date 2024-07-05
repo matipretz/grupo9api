@@ -13,9 +13,7 @@ app
   .use(cors())
   .disable('x-powered-by')
   .use('/noticias', router)
-
-const DB_PORT = process.env.DB_PORT.listen(PORT, () => {
-  console.log(`server listening on port ${PORT}`)
-  console.log(`DB on port ${DB_PORT}`)
-  console.error(`${process.env.ENV}`)
-})
+  .listen(PORT, () => {
+    console.log(`server listening on port ${PORT}`)
+    console.error(`${process.env.ENV}`)
+  })
