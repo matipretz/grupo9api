@@ -95,14 +95,14 @@ const enviar = async () => {
     let fecha = ''
     let config
     if (idNoticia.value > 0) {
-      let arr1 = noticiaFecha.value.split('-')
+      const arr1 = noticiaFecha.value.split('-')
       fecha = arr1[2] + '-' + arr1[1] + '-' + arr1[0]
       config = {
         url: API_URL + '/' + idNoticia.value,
         method: 'PATCH'
       }
     } else {
-      let hoy = new Date()
+      const hoy = new Date()
       fecha =
         hoy.getFullYear() +
         '-' +
@@ -115,7 +115,7 @@ const enviar = async () => {
       }
     }
 
-    let payload = {
+    const payload = {
       categoria: categorianoticia.value,
       titulo: noticiaTitulo.value,
       cuerpo: noticiaTexto.value,
@@ -123,7 +123,7 @@ const enviar = async () => {
       fecha: fecha,
       imagen: noticiaImagen.value
     }
-    let data = JSON.stringify(payload)
+    const data = JSON.stringify(payload)
 
     setContenedorHTML('<div align="center">enviando noticia...</div>')
     console.log(config.url + ' ' + config.method + ' ' + data)

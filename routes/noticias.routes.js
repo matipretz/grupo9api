@@ -7,8 +7,8 @@ const router = Router()
 router
   .get('/', controllers.getAllArticles)
   .get('/:id', controllers.getArticleById)
-  .post('/',middlewares.authJWT, controllers.createArticle)
-  .patch('/:id',middlewares.authJWT, controllers.updateArticle)
-  .delete('/:id',middlewares.authJWT, controllers.deleteArticle)
+  .post('/', middlewares.authJWT, controllers.createArticle)
+  .patch('/:id', middlewares.authJWT, controllers.updateArticle)
+  .delete('/:id', middlewares.authJWT, controllers.deleteArticle)
 
 export default router
