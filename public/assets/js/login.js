@@ -1,4 +1,4 @@
-const API_LOGIN_URL = 'https://grupo9api.up.railway.app/auth'
+const API_LOGIN_URL = 'g9auth.up.railway.app'
 const email = document.getElementById('email')
 const password = document.getElementById('password')
 
